@@ -46,3 +46,12 @@ const App = () => {
 };
 
 export default App;
+
+// Tarea sección 4:
+
+// Add Filter component which allows us to use a dropdown and set a filter
+// Listen to changes on the dropdown
+// Whenever the user does select a new state (a new year) you should listen to that event and then make sure that the picked year (value) is forwarded to the Expenses component
+// Add the ExpenseFilter component to Expenses.js (wrap Card with a div and include ExpenseFilter at the beggining)
+// Forward the picked year from ExpenseFilter to the Expenses component and then in the Expenses component store it in a state.
+// No need to filter the expenses yet, just listen the change event and forward the data.
