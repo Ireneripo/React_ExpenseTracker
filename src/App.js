@@ -1,33 +1,36 @@
-import React from 'react';
+import React, { useState } from 'react';
 import NewExpense from './components/NewExpense/NewExpense';
 import Expenses from './components/Expenses/Expenses';
 
+const DUMMY_EXPENSES = [
+  {
+    id: 'e1',
+    title: 'Toilet Paper',
+    amount: 94.12,
+    date: new Date(2020, 7, 14),
+  },
+  { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
+  {
+    id: 'e3',
+    title: 'Car Insurance',
+    amount: 294.67,
+    date: new Date(2021, 2, 28),
+  },
+  {
+    id: 'e4',
+    title: 'New Desk (Wooden)',
+    amount: 450,
+    date: new Date(2021, 5, 12),
+  },
+];
+
 const App = () => {
-  const expenses = [
-    {
-      id: 'e1',
-      title: 'Toilet Paper',
-      amount: 94.12,
-      date: new Date(2020, 7, 14),
-    },
-    { id: 'e2', title: 'New TV', amount: 799.49, date: new Date(2021, 2, 12) },
-    {
-      id: 'e3',
-      title: 'Car Insurance',
-      amount: 294.67,
-      date: new Date(2021, 2, 28),
-    },
-    {
-      id: 'e4',
-      title: 'New Desk (Wooden)',
-      amount: 450,
-      date: new Date(2021, 5, 12),
-    },
-  ];
+  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
   const addExpenseHandler = (expense) => {
-    console.log('In App.js');
-    console.log(expense);
+    setExpenses((prevExpenses) => {
+      return [expense, ...prevExpenses];
+    });
   };
 
   // return React.createElement(
@@ -47,11 +50,9 @@ const App = () => {
 
 export default App;
 
-// Tarea sección 4:
+// Tarea sección 5:
 
-// Add Filter component which allows us to use a dropdown and set a filter
-// Listen to changes on the dropdown
-// Whenever the user does select a new state (a new year) you should listen to that event and then make sure that the picked year (value) is forwarded to the Expenses component
-// Add the ExpenseFilter component to Expenses.js (wrap Card with a div and include ExpenseFilter at the beggining)
-// Forward the picked year from ExpenseFilter to the Expenses component and then in the Expenses component store it in a state.
-// No need to filter the expenses yet, just listen the change event and forward the data.
+// Create a filter to filter items by year
+// You can use the .filter() method
+// Don't think too complicated
+// Do NOT change the overall Expenses array. Derive a new array based on the full Expenses array which is a subset of that array for the chosen filter.
