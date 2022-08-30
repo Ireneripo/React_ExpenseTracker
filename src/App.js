@@ -50,9 +50,9 @@ const App = () => {
 
 export default App;
 
-// Tarea sección 5:
+// Tarea 4:
 
-// Create a filter to filter items by year
-// You can use the .filter() method
-// Don't think too complicated
-// Do NOT change the overall Expenses array. Derive a new array based on the full Expenses array which is a subset of that array for the chosen filter.
+// Change the logic to make sure that we have a button "Add New Expense" instead of the form.
+// When the button is clicked, it disappears and the form is shown instead.
+// When the button "Add Expense" is clicked, the form disappears again and the "Add New Expense" button is shown again.
+// Add a cancel button to the form which also make the form disappear but without submitting the form.
